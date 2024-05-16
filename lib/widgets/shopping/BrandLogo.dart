@@ -6,74 +6,38 @@ class BrandLogo extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.0),
       margin: EdgeInsets.all(20.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            _buildCircularBrandLogoWithName(
-              imageUrl: "https://cdn.pixabay.com/photo/2017/11/29/18/54/leaf-2986837_640.jpg",
-              name: 'Nike',
-            ),
-            SizedBox(width: 20.0),
-            _buildCircularBrandLogoWithName(
-              imageUrl: "https://cdn.pixabay.com/photo/2017/11/29/18/54/leaf-2986837_640.jpg",
-              name: 'Adidas',
-            ),
-            SizedBox(width: 20.0),
-            _buildCircularBrandLogoWithName(
-              imageUrl: "https://cdn.pixabay.com/photo/2017/11/29/18/54/leaf-2986837_640.jpg",
-              name: 'Puma',
-            ),
-            SizedBox(width: 20.0),
-            _buildCircularBrandLogoWithName(
-              imageUrl: "https://cdn.pixabay.com/photo/2017/11/29/18/54/leaf-2986837_640.jpg",
-              name: 'New Balance',
-            ),
-            SizedBox(width: 20.0),
-            _buildCircularBrandLogoWithName(
-              imageUrl: "https://cdn.pixabay.com/photo/2017/11/29/18/54/leaf-2986837_640.jpg",
-              name: 'Converse',
-            ),
-          ],
-        ),
+      child: Column(
+        children: [
+          SizedBox(height: 20.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              buildBrandWidget("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAaVBMVEX///8AAAD8/Pzw8PDz8/Pa2tr4+Pi1tbXq6upMTEzi4uKtra1JSUnT09NxcXHn5+fMzMwNDQ2SkpI8PDzDw8NjY2NEREQbGxuLi4unp6ctLS0UFBRUVFQ3Nzeenp4yMjJ7e3uDg4MjIyOF1KOcAAAD2klEQVR4nO3aW7eyKhQGYMEDpWIeC01N/f8/8tN2jWVJZYra2ON9LtbdAqcwmYBpGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAkujWDwByRmpv/QgqUEP363OQ6HPb2XyiGjZPE0Lc8DC3JWrPfRuzWLbPRERI5jkKnsOMjfmNTLTzWZicSTcosTW7NarthK/gqaZ0bbLQO5JO7nAlU90Q9RYDo8dhlTfXSIgXK1rCKMuYmpbGdXf9a5ZeXgT/RRLUvrKUtUkyewX5ihVX0eVMboLSnp8qd7QhQlljn9mlG5A/Tay09YRc1pll1DKchPSdEq62i7RdSJafZVQ/+GHxEMk5qm2lu0qq8W4pUdeglG5zxzs/REKypFT+CnW3zcBQdas99OCz+kieRDVTveWglIo2GZvFUkbnbU1sniPpSv0SW0HW9XRZpvx3xd0dBEJI4ijO+nt/edf6UX3+G3Ho5ZkkElLFC602lri2f1Q8fe3U2xeBLBISmovtzmOiPpi4KpqzNBASpNZypyY7URsMtVNZjtzs1Zb6577LWzeFOb8t48A8+cy6jknmze/jLX5fM7N574y2NTHcvx4ScsrF0lcUVnXv7FxOb8WwfaeSLlt3WZIufyT3//qbup1pAxH5u0DafKzZGue+3sRwJ0xogzuld3kfCclL31rjhjLu9Rl8O8/strjvX+f7fcCZudIF1sOOyf1ig2H5YSIv7o9qvlvu6R/Fjz2LkRN75yTHy8chaYUHdUfhj4qnzp0R/8NFdB4TCMlWWL964sGOI303vSk9OIMzyQvnfO07uGT4EOLFFLd0O65PIyMJomrhUj9kR5IHifxhOG1xLz9Ukp4mD7smVr2Dp1oo39d6jO/+nqQr7vVzbr1ReM4W96JUMstuo1OVDvM59xlLRTJ2cnX2Km69p+BvduptBhf7ffTiSPJKwtTcek+QfvPKR1jsKDxGrTKSk+BbfqjaeepCadI1S70EH7/YflAsehQeJZZVma8FTbJ6fZRgCvL/5IoNk75nfjCXNY7C48wN5ig2/Db9bF4w7VF48x9A9MRfbLietUdh7ad+d2ROXZpPQrKx3pg+rWieUoVfhdUJJ4SSxdv/VkjKfHeZKtXVx9+MRdPEN4Gcoh+pj1JUM16ezgba+vg7RUXu/fHsj1tfP6X+6gy78UekTeOVy3xKVY5/Wp8LseX58Uu7cviB/o/H+K+nSg/VqP9qcI6p+XOV/iPLrIaR7EtT//GEf8Vi/eFxRfdx6NcXr/dszhgz/xe/8wYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUOcfFFcs7GwyBJ0AAAAASUVORK5CYII=", 'Nike'),
+              buildBrandWidget("data:image/jpeg;base64,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", 'Adidas'),
+              buildBrandWidget("data:image/png;base64,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", 'Puma'),
+              buildBrandWidget("data:image/png;base64,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", 'NB'),
+              buildBrandWidget("data:image/png;base64,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", 'Converse'),
+            ],
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildCircularBrandLogoWithName({required String imageUrl, required String name}) {
-    return Expanded(
-      child: Column(
-        children: [
-          Container(
-            width: 70.0,
-            height: 70.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.black),
-            ),
-            child: ClipOval(
-              child: Image.network(
-                imageUrl,
-                width: 50.0,
-                height: 50.0,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-          SizedBox(height: 10.0),
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
+  Widget buildBrandWidget(String imageUrl, String brandName) {
+    return Column(
+      children: [
+        CircleAvatar(
+          backgroundImage: NetworkImage(imageUrl),
+          radius: 30,
+          backgroundColor: Colors.grey[200],
+        ),
+        SizedBox(height: 8),
+        Text(
+          brandName,
+          style: TextStyle(fontSize: 12),
+        ),
+      ],
     );
   }
 }
